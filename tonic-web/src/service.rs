@@ -86,7 +86,7 @@ where
     S::Future: Send + 'static,
     S::Error: Into<BoxError> + Send,
     ReqBody: Body + Send + 'static,
-    ReqBody::Error: Error + Send + Sync,
+    ReqBody::Error: Into<BoxError> + Send,
     ResBody: Body + Send + 'static,
     ResBody::Error: Error + Send + Sync + 'static,
 {
